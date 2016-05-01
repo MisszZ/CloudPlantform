@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloud.mapper.CloudResourceMapper">
+	<delete id="delOneSyso" parameterType="String">
+		delete from server where systemType=#{systemType}
+	</delete>
+	<!-- 获取虚机按钮状态 -->
+	<select id="getAddTimeStatus" resultType="int">
+		select turn from admin limit 1	
+	</select>
+	<!-- 添加云平台服务器类型 -->
+	<insert id="addType" parameterType="serverBean">
+		insert into
+		server(systemType,configuration)
+		values(#{systemType},#{configuration})
+	</insert>
+
+	<!-- 多条件查询 -->
+	<select id="getEmail" parameterType="String" resultType="String">
+		select
+		email from userinfo where name=#{name}
+	</select>
+	<select id="search" parameterType="useDataBean" resultType="useDataBean">
+		select
+		usetable.email,phone,name,department,time,timed,uses,systemType,configuration,inPortTrue,outPortTrue,inIp,outIp,location,machineName,note
+		from userinfo left join usetable on userinfo.email=usetable.email
+		where state=1
+		<if test="name != null and name != '' ">
+			and name=#{name}
+		</if>
+		<if test="outIp != null and outIp != '' ">
+			and outIp=#{outIp}
+		</if>
+		<if test="inIp != null and inIp != '' ">
+			and inIp=#{inIp}
+		</if>
+		<if test="inPortTrue != null and inPortTrue != '' ">
+			and inPortTrue=#{inPortTrue}
+		</if>
+		<if test="outPortTrue != null and outPortTrue != '' ">
+			and outPortTrue=#{outPortTrue}
+		</if>
+		<if test="systemType != null and systemType != '' ">
+			and systemType=#{systemType}
+		</if>
+		<if test="department != null and department != '' ">
+			and department=#{department}
+		</if>
+		<if test="machineName != null and machineName != '' ">
+			and machineName=#{machineName}
+		</if>
+	</select>
+	<!-- 根据是否过期产查看资源信息多条件 -->
+	<select id="searchByRa" parameterType="useDataBean" resultType="useDataBean">
+		select
+		usetable.email,phone,name,department,timed,uses,systemType,configuration,inPortTrue,outPortTrue,inIp,outIp,location,machineName,note
+		from userinfo left join usetable on userinfo.email=usetable.email
+		where state=#{state}
+		<if test="name != null and name != '' ">
+			and name=#{name}
+		</if>
+		<if test="outIp != null and outIp != '' ">
+			and outIp=#{outIp}
+		</if>
+		<if test="inIp != null and inIp != '' ">
+			and inIp=#{inIp}
+		</if>
+		<if test="inPortTrue != null and inPortTrue != '' ">
+			and inPortTrue=#{inPortTrue}
+		</if>
+		<if test="outPortTrue != null and outPortTrue != '' ">
+			and outPortTrue=#{outPortTrue}
+		</if>
+		<if test="systemType != null and systemType != '' ">
+			and systemType=#{systemType}
+		</if>
+		<if test="department != null and department != '' ">
+			and department=#{department}
+		</if>
+		<if test="machineName != null and machineName != '' ">
+			and machineName=#{machineName}
+		</if>
+	</select>
+	<!-- 查询所有的资源信息 -->
+	<select id="getAllCloudInfo" resultType="useDataBean">
+		select
+		usetable.email,phone,name,department,timed,uses,systemType,configuration,inPortTrue,outPortTrue,inIp,outIp,location,machineName,note,state
+		from userinfo left join usetable on userinfo.email=usetable.email where state=1 or state=3
+	</select>
+	<!-- 查询所有的资源信息 -->
+	<select id="getAllCloudInfoByRa" parameterType="int" resultType="useDataBean">
+		select
+		usetable.email,phone,name,department,timed,uses,systemType,configuration,inPortTrue,outPortTrue,inIp,outIp,location,machineName,note,state
+		from userinfo left join usetable on userinfo.email=usetable.email
+		where state=#{state}
+	</select>
+	<!-- 获取用户的部分信息 -->
+	<select id="getUserInfo" parameterType="String" resultType="adminDealApplyBean">
+		select
+		usetable.email,userinfo.phone,userinfo.name,userinfo.department,time,timed,uses,systemType,configuration,temPort,location,machineName
+		from
+		usetable,userinfo where usetable.email=#{email} and usetable.email=userinfo.email limit 1
+	</select>
+	<!-- 添加虚机 -->
+	<insert id="addUserMachine" parameterType="adminDealApplyBean">
+		insert into
+		usetable(email,time,timed,uses,systemType,configuration,temPort,inPortTrue,outPortTrue,inIp,outIp,location,machineName,note,state)
+		values
+		(#{email},#{time},#{timed},#{uses},#{systemType},#{configuration},#{temPort},#{inPortTrue},#{outPortTrue},#{inIp},#{outIp},#{location},#{machineName},#{note},1)
+	</insert>
+	<!-- 删除到期虚机 -->
+	<delete id="delTimed" parameterType="useDataBean">
+		delete from usetable where email=#{email} and inIp=#{inIp} and outIp=#{outIp} and inPortTrue=#{inPortTrue} and outPortTrue=#{outPortTrue}
+	</delete>
+</mapper>

@@ -1,0 +1,126 @@
+#content-r{
+    /*background:#E4E4E2;*/
+    background:#fff;
+    width:1000px;
+    height:595px;
+    float:left;
+    margin-left:15px;
+    margin-top:10px;
+    position:relative;
+}
+#apply{
+    width:500px;
+    height:300px;
+    /*background:orange;*/
+    margin-top:80px;
+    margin-left:170px;
+}
+#apply ul li{
+    float:left;
+    margin-left:60px;
+}
+#apply ul li img{
+    margin-left:-6px;
+}
+#apply ul li span{
+    display:inline-block;
+    font-size:18px;
+    padding-top:10px;
+}
+#apply #btn1{
+    width:170px;
+    height:45px;
+    background:#c5ccd8;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:18px;
+    display:block;
+    position:absolute;
+    top:45%;
+    left:45%;
+}
+#apply a{
+    text-decoration: none;
+}
+#mask{
+    background: #333;
+    opacity: 0.80;
+    filter:alpha(opacity=80);
+    height:950px;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index:9999;
+}
+#content_main{
+    width:684px;
+    height:600px;
+    background:#f1f1f1;
+    position: absolute;
+    top:7%;
+    left: 20%;
+    z-index:1000001;
+    border-radius:2px;
+}
+#xy{
+    background:#fff;
+    width:684px;
+    height:500px;
+    margin:30px auto;
+}
+#ty{
+    width:684px;
+    height:100px;
+    background:#f1f1f1;
+    margin:-30px auto;
+    position:relative;
+}
+#ty p{
+    width:684px;
+    height:30px;
+
+}
+#ty p input{
+    /*height:40px;
+    line-height:40px;*/
+    font-size:12px;
+    font-weight:lighter;
+    margin-left:440px;
+    margin-top:5px;
+}
+#ty p span{
+    display:inline-block;
+    width:230px;
+    height:30px;
+    line-height:30px;
+    position:absolute;
+    top:-2px;
+    left:460px;
+}
+#ty a{
+    width:120px;
+    /*border:1px solid red;*/
+    height:50px;
+    line-height:10px;
+    font-family:inherit;
+    font-size:16px;
+    font-weight:bold;
+    margin-left:550px;
+    vertical-align:top;
+    color:#333;
+    text-decoration:none;
+}
+#ty a span{
+    display:block;
+    height:50px;
+    width:50px;
+    margin-top:12px;
+    margin-left:555px;
+}
+#ty a img{
+    position:absolute;
+    top:32px;
+    left:605px;
+    border:none;
+}

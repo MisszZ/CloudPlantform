@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloud.mapper.AdminDealApplyMapper">
+
+	<!--管理员审核申请 -->
+	<select id="checkApply" resultType="adminDealApplyBean">
+		select
+		usetable.email,userinfo.phone,userinfo.name,userinfo.department,time,timed,uses,systemType,configuration,temPort,domainName
+		from
+		usetable,userinfo where state=0 and usetable.email=userinfo.email
+	</select>
+	<!-- 管理员对申请结果处理/同意 -->
+	<update id="agreeApply" parameterType="adminDealApplyBean">
+		update usetable set
+		domainName=#{domainName},inPortTrue=#{inPortTrue},outPortTrue=#{outPortTrue},outIp=#{outIp},inIp=#{inIp},location=#{location},machineName=#{machineName},note=#{note},state=1
+		where email=#{email} and state=0 and systemType=#{systemType} and uses=#{uses}
+	</update>
+	<!-- 管理员对申请结果处理/拒绝 -->
+	<update id="rejectApply" parameterType="adminDealApplyBean">
+		update usetable set
+		reason=#{reason},state=#{state} where email=#{email} and state=0 and systemType=#{systemType} and uses=#{uses}
+	</update>
+	<!-- 查看虚机个数 -->
+	<select id="getMachineNum" resultType="int">
+		select count(*) from personalmachine
+	</select>
+</mapper>

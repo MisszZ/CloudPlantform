@@ -1,0 +1,63 @@
+/* 
+* @Author: anchen
+* @Date:   2015-08-12 11:47:03
+* @Last Modified by:   anchen
+* @Last Modified time: 2015-08-12 13:44:27
+*/
+h1{
+    text-shadow:3px 3px 3px #949494;
+    color: #d74a48;
+    left:50px;
+    display:block;
+    position:relative;
+}
+#sel{
+    position: relative;
+    left: 50px;
+    margin:20px;
+}
+#btn{
+    position: relative;
+    left:20%;
+    top:40px;
+    width:1200px;
+}
+input{
+    height:48px;
+    width:260px;
+    color:#fff;
+    text-align:center;
+    border-radius:10px;
+    font-size:16px;
+    word-spacing:3px;
+    letter-spacing:1px;
+    font-weight:800;
+    line-height:48px;
+    margin-bottom:45px;
+    display:block;
+    box-shadow: 3px 3px 1px #ccc;
+    outline:none;
+}
+#start{
+    background:#006e54;
+   
+}
+#start:hover{
+    background:#006e50;
+}
+#close{
+    background:#DE1819;
+    position:relative;
+    left:100px;
+}
+#close:hover{
+    background:#f20c00;
+}
+#restart{
+    background:#16160e;
+    left:200px;
+    position:relative;
+}
+#restart:hover{
+    background:#2b2b2b;
+}

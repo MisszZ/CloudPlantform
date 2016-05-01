@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloud.mapper.HaveInfoMapper">
+	<!-- 获取用户部分信息 -->
+	<select id="userInfo" resultType="userInfoBean" parameterType="String">
+		select name,phone,department from userinfo where email=#{email}
+	</select>
+	<select id="userPhone" resultType="String" parameterType="String">
+		select phone from userinfo where email=#{email}
+	</select>
+	<select id="userDepart" resultType="String" parameterType="String">
+		select department from userinfo where email=#{email}
+	</select>
+	<!-- 获取配置信息 -->
+	<select id="serverConfigInfo" resultType="String">
+		select configuration from server limit 1
+	</select>
+	<!-- 获取系统类型 -->
+	<select id="serverSystemInfo" resultType="serverBean">
+		select systemType from server
+	</select>
+	
+</mapper>

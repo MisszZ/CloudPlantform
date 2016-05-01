@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+.content-r{
+    background-color:#fff;
+    width:600px;
+    height:395px;
+    float:left;
+    margin-left:130px;
+    margin-top:45px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+.content-r p{
+    font-size:18px;
+    font-family: "Lato", sans-serif, "Times New Roman", Times, serif;
+    margin-top:20px;
+    margin-left:40px;
+    font-weight:600;
+}
+.content-r p:first-child{
+    margin-top:40px;
+    margin-left:40px;
+}
+.content-r .DivSelect{
+    position:relative;
+    background-color:transparent;
+    width:452px;
+    height:45px;
+    overflow:hidden; /*隐藏了小三角，因为宽度为110px,而select宽度为130px*/
+    border-width:0px;
+    border:none;
+}
+.content-r  .SelectList
+{
+    position: relative;
+    background-color: transparent;
+    top: 12px;
+    left:6px;
+    border-width: 0px;
+    width:472px;
+    display:block;
+    height:30px;
+    overflow:hidden;
+    background:url(../images/005.png) no-repeat;
+    font-size:16px;
+    font-family:inherit;
+    font-weight:600;
+    color:#333;
+    padding-left:35px;
+    margin-left:40px;
+    border:none;
+}
+.content-r select option{
+    height:25px;
+    background:#ccc;
+    border-bottom:1px solid #666;
+    line-height:25px;
+    font-size:16px;
+    font-family:inherit;
+    font-weight:600;
+    color:#333;
+}
+#state{
+    margin-left:40px;
+    margin-top:20px;
+}
+input{
+    border:none;
+}
+#open{
+    width:150px;
+    height:35px;
+    border-radius:10px;
+    background:yellow;
+    text-align: center;
+    line-height:35px;
+    font-size:16px;
+    font-family: inherit;
+    float:left;
+    margin-left:40px;
+    margin-top:20px;
+}
+#close{
+    width:150px;
+    height:35px;
+    border-radius:10px;
+    background:#ccc;
+    text-align: center;
+    line-height:35px;
+    font-size:16px;
+    font-family: inherit;
+    float:left;
+    margin-left:40px;
+    margin-top:20px;
+}
+#reopen{
+    width:150px;
+    height:35px;
+    border-radius:10px;
+    background:#009966;
+    text-align: center;
+    line-height:35px;
+    font-size:16px;
+    font-family: inherit;
+    float:left;
+    margin-left:40px;
+    margin-top:20px;
+}

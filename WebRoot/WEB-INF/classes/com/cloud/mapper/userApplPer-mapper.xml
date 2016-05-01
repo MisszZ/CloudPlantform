@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloud.mapper.UserApplPerMapper">
+	<!-- 查看是否已拥有个人办公机 -->
+	<select id="havePer" parameterType="String" resultType="int">
+		select
+		personalNum from userinfo where email=#{email}
+	</select>
+	<!-- 查看该类型个人办公机数据 -->
+	<select id="lookPerNum" parameterType="String" resultType="int">
+		select count(*) from personalmachine where systemType=#{systemType}
+	</select>
+	<!-- 获得个人办公机账号 -->
+	<select id="userApplPer" parameterType="String" resultType="userApplPerBean">
+		select
+		personalMachineNum,personalMachinePwd from personalmachine where systemType=#{systemType} and state=0 limit 1 
+	</select>
+	<update id="setPerNumber" parameterType="userApplPerBean">
+		update userInfo set personalMachineNum=#{personalMachineNum},personalMachinePwd=#{personalMachinePwd},personalNum=1 where email=#{email}
+	</update>
+	<select id="setStatusNum" parameterType="int">
+		update personalmachine state=1 	where personalMachineNum=#{personalMachineNum}
+	</select>
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 管理员对用户操作 -->
+<mapper namespace="com.cloud.mapper.AdminSendEmailMapper">
+	<!-- 获得所有用户的信息 -->
+	<select id="getUserInfo" resultType="adminSendEmailBean">
+		select name,email from userinfo order by convert(name using gbk) asc limit 0,10 
+	</select>
+	<!-- 获取用户总数 -->
+	<select id="getUserCount" resultType="int">
+		select count(*) from userinfo 
+	</select>
+	<!-- 获取其他用户信息 -->
+	<select id="getOtherUserInfo" parameterType="int" resultType="adminSendEmailBean">
+		select name,email from userinfo order by convert(name using gbk) asc limit 10,#{count}  
+	</select>
+	<!-- 获取将要给发消息的用户的email -->
+	<select id="getEmail" parameterType="String" resultType="String">
+		select email from userinfo where name=#{name}
+	</select>
+</mapper>

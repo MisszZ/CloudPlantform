@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloud.mapper.UserAddTimeApplMapper">
+
+	<select id="getAddTimeResInfo" parameterType="String" resultType="addTimeResInfoBean">
+		select distinct  machineName,time,timed from usetable where email=#{email} and state=1 
+	</select>
+<!-- 查看是否已经进行续期 -->
+	<select id="lookRenewalNum" parameterType="userAddTimeApplBean" resultType="userAddTimeApplBean">
+		select renewalNum,timed from usetable where machineName=#{machineName} and email=#{email} limit 1
+	</select>
+	<!-- 虚拟机续期，更改时间 -->
+	<update id="addTime" parameterType="userAddTimeApplBean">
+		update usetable set timed = #{timed},renewalNum=1 where machineName=#{machineName} 
+	</update>
+</mapper>

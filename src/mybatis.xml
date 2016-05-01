@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.cloud.entity.AdminDealApplyBean" alias="adminDealApplyBean"/>
+		<typeAlias type="com.cloud.entity.AdminBean" alias="adminBean"/>
+		<typeAlias type="com.cloud.entity.UserInfoBean" alias="userInfoBean"/>
+		<typeAlias type="com.cloud.entity.ServerBean" alias="serverBean"/>
+		<typeAlias type="com.cloud.entity.UserHaveApplyStatusBean" alias="userHaveApplyStatusBean"/>
+		<typeAlias type="com.cloud.entity.AdminManageUserBean" alias="adminManageUserBean"/>
+		<typeAlias type="com.cloud.entity.DelRejApplBean" alias="delRejApplBean"/>
+		<typeAlias type="com.cloud.entity.CounterBean" alias="counterBean"/>
+		<typeAlias type="com.cloud.entity.UseDataBean" alias="useDataBean"/>
+		<typeAlias type="com.cloud.entity.AdminSendEmailBean" alias="adminSendEmailBean"/>
+		<typeAlias type="com.cloud.entity.UserAddTimeApplBean" alias="userAddTimeApplBean"/>
+		<typeAlias type="com.cloud.entity.AddTimeResInfoBean" alias="addTimeResInfoBean"/>
+		<typeAlias type="com.cloud.entity.UserGetMachineBean" alias="userGetMachineBean"/>
+		<typeAlias type="com.cloud.entity.MachineNameBean" alias="machineNameBean"/>
+		<typeAlias type="com.cloud.entity.UserApplPerBean" alias="userApplPerBean"/>
+		<typeAlias type="com.cloud.entity.UserHaveStatuBySysBean" alias="userHaveStatuBySysBean"/>
+		<typeAlias type="com.cloud.entity.UserApplyPerCodBean" alias="userApplyPerCodBean"/>
+		<typeAlias type="com.cloud.entity.UserSendMesBean" alias="userSendMesBean"/>
+		<typeAlias type="com.cloud.entity.SomeInfoOfMaBean" alias="someInfoOfMaBean"/>
+	</typeAliases>
+</configuration>

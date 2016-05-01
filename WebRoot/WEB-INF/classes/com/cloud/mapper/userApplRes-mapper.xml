@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloud.mapper.UserApplyResMapper">
+
+<!-- 用户申请资源 -->
+	<insert id="applyResource" parameterType="useDataBean">
+		insert into usetable
+		(email,time,timed,uses,configuration,temPort,systemType)
+		values
+		(#{email},#{time},#{timed},#{uses},#{configuration},#{temPort},#{systemType})
+	</insert>
+	<insert id="insertInfo" parameterType="useDataBean">
+		update userinfo set phone=#{phone},department=#{department} where email=#{email}
+	</insert>
+	<select id="getAddTimeResInfo" parameterType="String" resultType="addTimeResInfoBean">
+		select machineName,time, from useData where email=#{email}
+	</select>
+</mapper>

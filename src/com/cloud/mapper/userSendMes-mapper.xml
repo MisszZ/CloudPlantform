@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.mapper.UserSendMesMapper">
+	<!-- 查看消息 -->
+	<select id="adminMes" parameterType="String" resultType="userSendMesBean">
+		select target,chat.email,content,time from chat where email=#{email} or target=#{email} order by id desc
+	</select>
+	<!--用户向管理员发消息  -->
+	<insert id="userSendMes" parameterType="userSendMesBean">
+		insert into chat(target,email,content,time) values(#{target},#{email},#{content},#{time})
+	</insert>
+</mapper>

@@ -1,0 +1,129 @@
+@charset "utf-8";
+#content .content-r{
+	background-color:#fff;
+	width:800px;
+	height:595px;
+	float:left;
+	margin-left:45px;
+	margin-top:30px;
+	position:relative;
+}
+.laba{
+	position:absolute;
+	left:465px;
+	top:230px;:
+	}
+#content-r h1{
+	width:600px;
+	height:50px;
+	font-size:25px;
+	font-family:inherit;
+	font-weight:normal;
+	background:#30373f;
+	color:#E6E6E8;
+	text-align:center;
+	line-height:50px;
+	text-shadow:1px 1px 1px #A5AAAE;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	position:absolute;
+	top:300px;
+	left:500px;
+	box-shadow:0 3px 3px #999;
+	}
+#content-r table{
+	width:600px;
+	height:auto;
+	background:#fff;
+	margin-top:150px;
+	margin-left:500px;
+	border-radius:3px;
+	border-collapse:collapse;
+	box-shadow:0 6px 3px #999;
+	border:1px solid #ccc;
+	}
+#content-r table tr{
+	width:600px;
+	height:40px;
+	text-align:center;
+	}
+#content-r table td{
+	font-size:14px;
+	font-family:inherit;
+	color:#969696;
+	font-weight:600;
+	border:1px solid #B2DAFD;
+	}
+#content-r table td a{
+	color:#969696;
+	text-decoration:none;
+	}
+#content-r table td a:hover{
+	color:#5F5F5F;
+	text-decoration:underline;
+	}
+#content-r tableb tr td:last-child{
+	background-color:transparent;
+	position:relative;
+	width:110px;
+	height:40px;
+	overflow:hidden; /*隐藏了小三角，因为宽度为110px,而select宽度为130px*/
+    border-width:0px;
+    border-top-style: none; 
+    border-right-style: none; 
+    border-left-style: none; 
+    border-bottom-style: none;
+	border:none;
+	}
+#content-r table td select{
+	position:relative;
+	width:100px;
+	height:25px;
+	background-color:transparent;/*将背景设置为透明色*/
+	top:0;
+    left:4px;
+    border-width:0px;
+    border-top-style:none; 
+    border-right-style:none; 
+    border-left-style:none; 
+    border-bottom-style:none;
+	font-size:14px;
+	font-family:inherit;
+	color:#969696;
+	font-weight:600;
+	border:none;
+	}
+#content-r table th{
+	width:150px;
+	height:40px;
+	text-align:center;
+	font-size:16px;
+	font-family:inherit;
+	color:#5F5F5F;
+	font-weight:600;
+	border:1px solid #B2DAFD;
+	}
+#content-r table tr td:first-child,.content-r table tr th:first-child{
+	width:250px;
+	height:40px;
+	text-align:center;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+		

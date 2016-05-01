@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloud.mapper.UserHaveResInfoMapper">
+
+	<!-- 查看申请到的资源 -->
+	<select id="searchResource" parameterType="String" resultType="machineNameBean">
+		select distinct machineName from
+		usetable where
+		email=#{email} and state=1
+	</select>
+	<!-- 是否有申请到的资源 -->
+	<select id="haveMachine" parameterType="String" resultType="int">
+		select count(*) from usetable where email=#{email} and state=1
+	</select>
+	<select id="getFirstInfo" parameterType="String" resultType="useDataBean">
+		select configuration,time,timed,systemType,uses from
+		usetable where
+		email=#{email} and state=1 limit 1
+	</select>
+	<!-- 获得第一组虚机名称 -->
+	<select id="getFirName" parameterType="String" resultType="String">
+		select machineName from usetable where email=#{email} and state=1 limit 1
+	</select>
+	<!--外网IP，外端口号，内端口号 -->
+	<select id="getSomeInfoOfirFMa" parameterType="userGetMachineBean" resultType="useDataBean">
+		select configuration,time,timed,systemType,inPortTrue,outPortTrue,outIp,domainName,uses from
+		usetable where
+		email=#{email} and state=1 and machineName=#{machineName}
+	</select>
+	<select id="getMachineInfo" parameterType="userGetMachineBean" resultType="useDataBean">
+		select configuration,time,timed,systemType ,inPortTrue,outPortTrue,outIp,domainName,uses from
+		usetable where
+		email=#{email} and state=1 and machineName=#{machineName}
+	</select>
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloud.mapper.AddTimeSetMapper">
+	<!-- 更改续期设置 -->
+	<!-- 获得开关 状态-->
+	<select id="getStatus" resultType="int">
+		select turn from admin
+	</select>
+	<update id="addTimeSet" parameterType="int">
+		update admin set turn=#{info};
+	</update>
+</mapper>
